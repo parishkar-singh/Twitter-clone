@@ -1,10 +1,13 @@
 import React, {useCallback, useState} from 'react';
-import useLoginModal from "@/hooks/useLoginModal";
 import Input from "@/components/layout/Input";
 import Modal from "@/components/Model";
+import useLoginModal from "@/hooks/useLoginModal";
+import useRegisterModal from "@/hooks/useRegisterModal";
 
-const LoginModal = () => {
-    const loginModal = useLoginModal();
+
+const RegisterModal = () => {
+    const LoginModal=useLoginModal();
+    const RegisterModal = useRegisterModal();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -13,14 +16,14 @@ const LoginModal = () => {
             try {
                 setIsLoading(true);
                 //todo add login in
-                loginModal.onClose();
+                RegisterModal.onClose();
             } catch (error: any) {
                 console.log(error.message);
             } finally {
                 setIsLoading(false);
             }
         },
-        [loginModal]);
+        [RegisterModal]);
 
     const bodyContent = (
         <div className='flex flex-col gap-4'>
@@ -42,10 +45,10 @@ const LoginModal = () => {
         <div>
             <Modal
                 disabled={isLoading}
-                isOpen={loginModal.isOpen}
+                isOpen={RegisterModal.isOpen}
                 title={'Login'}
                 actionLabel={'Sign In'}
-                onClose={loginModal.onClose}
+                onClose={RegisterModal.onClose}
                 onSubmit={onSubmit}
                 body={bodyContent}
                 // error={error}
@@ -54,4 +57,4 @@ const LoginModal = () => {
     );
 };
 
-export default LoginModal;
+export default RegisterModal;
