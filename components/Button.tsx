@@ -9,14 +9,14 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({
-                                           label,
-                                           secondary,
-                                           fullWidth,
-                                           onClick,
-                                           large,
-                                           disabled,
-                                           outline
-                                       }) => {
+    label,
+    secondary,
+    fullWidth,
+    onClick,
+    large,
+    disabled,
+    outline
+}) => {
     return (
         <button
             disabled={disabled}

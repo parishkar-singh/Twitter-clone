@@ -7,7 +7,7 @@ import Model from "@/components/Model";
 export default function App({Component, pageProps}: AppProps) {
     return (
         <>
-            <Model actionLabel='Submit' isOpen title='testModel'/>
+            {/*<Model actionLabel='Submit' isOpen title='testModel'/>*/}
             <Layout>
                 <Component {...pageProps} />
             </Layout>
