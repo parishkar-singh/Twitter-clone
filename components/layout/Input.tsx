@@ -19,7 +19,7 @@ const Input: React.FC<InputProps> = ({
     return (
         <div>
             <input
-                className='w-full p-4 text-lg bg-black border-2 rounded-2xl
+                className='w-full p-4 text-lg bg-black border-2 text-white rounded-2xl
                  focus:border-sky-500 focus:border-2 transition disabled:bg-neutral-500 disabled:cursor-not-allowed'
                 placeholder={placeholder}
                 type={type}

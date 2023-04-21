@@ -1,7 +1,6 @@
 import {NextApiRequest} from 'next'
 import {getSession} from "next-auth/react";
 import prisma from "@/libs/prismadb";
-import {mockSession} from "next-auth/client/__tests__/helpers/mocks";
 const serverAuth =async (req:NextApiRequest)=>{
     const session=await getSession({req});
     if(!session?.user?.email){
