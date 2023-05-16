@@ -1,7 +1,9 @@
 import Header from '@/components/Header'
 import {useRouter} from "next/router";
 import useUser from "@/hooks/useUser";
+import UserBio from "@/components/users/UserBio";
 import {ClipLoader} from "react-spinners";
+import UserHero from "@/components/users/UserHero";
 
 
 
@@ -22,6 +24,8 @@ const UserView = () => {
     return (
         <>
             <Header label={fetcherUser?.name} showBackArrow />
+            <UserHero userId={userId as string}/>
+            <UserBio userId={userId as string}/>
         </>
     )
 }
