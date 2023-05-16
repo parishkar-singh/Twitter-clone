@@ -9,12 +9,16 @@ const UserView = () => {
     const router = useRouter()
     const {userId} = router.query
     const {data: fetcherUser, isLoading} = useUser(userId as string)
-    if (isLoading || !fetcherUser)
+    console.log(fetcherUser)
+    // if (isLoading || !fetcherUser)
+    if(false)
+    {
         return (
             <div className={`flex justify-center items-center h-full`}>
                 <ClipLoader color={`lightblue`} size={80}/>
             </div>
         )
+    }
     return (
         <>
             <Header label={fetcherUser?.name} showBackArrow />
