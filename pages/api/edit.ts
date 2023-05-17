@@ -3,13 +3,13 @@ import serverAuth from "@/libs/serverAuth";
 import prisma from '@/libs/prismadb'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method === 'PATCH') {
+    if (req.method !== 'PATCH') {
         return res.status(405).end()
     }
     try {
         const {currentUser} = await serverAuth(req, res)
         const {name, bio, username, profileImage, coverImage} = req.body
-        if (!name || username)
+        if (!name || !username)
             throw new Error('Missing Fields')
         const updatedUser=await prisma.user.update({
             where:{

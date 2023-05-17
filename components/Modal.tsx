@@ -1,5 +1,5 @@
-import { useCallback } from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import React, {useCallback} from "react";
+import {AiOutlineClose} from "react-icons/ai";
 import Button from "./Button";
 
 interface ModalProps {
@@ -13,7 +13,7 @@ interface ModalProps {
     disabled?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit, title, body, actionLabel, footer, disabled }) => {
+const Modal: React.FC<ModalProps> = ({isOpen, onClose, onSubmit, title, body, actionLabel, footer, disabled}) => {
     const handleClose = useCallback(() => {
         if (disabled) {
             return;
@@ -92,7 +92,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit, title, body, a
                 "
                                 onClick={handleClose}
                             >
-                                <AiOutlineClose size={20} />
+                                <AiOutlineClose size={20}/>
                             </button>
                         </div>
                         {/*body*/}
@@ -101,7 +101,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit, title, body, a
                         </div>
                         {/*footer*/}
                         <div className="flex flex-col gap-2 p-10">
-                            <Button disabled={disabled} label={actionLabel} secondary fullWidth large onClick={handleSubmit} />
+                            <Button disabled={disabled} label={actionLabel} secondary fullWidth large
+                                    onClick={handleSubmit}/>
                             {footer}
                         </div>
                     </div>
