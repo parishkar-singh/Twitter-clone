@@ -1,14 +1,11 @@
 import { signIn } from "next-auth/react";
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { toast } from "react-hot-toast";
+import { Input,Modal } from "@/components";
+import {useLoginModal,useRegisterModal} from "@/hooks";
 
-import useLoginModal from "@/hooks/useLoginModal";
-import useRegisterModal from "@/hooks/useRegisterModal";
 
-import Input from "../Input";
-import Modal from "../Modal";
-
-const LoginModal = () => {
+const LoginModal:React.FC = () => {
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
 
@@ -42,18 +39,18 @@ const LoginModal = () => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Input 
+      <Input
         placeholder="Email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
-        disabled={isLoading}  
+        disabled={isLoading}
       />
-      <Input 
+      <Input
         placeholder="Password"
         type="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
-        disabled={isLoading} 
+        disabled={isLoading}
       />
     </div>
   )
@@ -61,11 +58,11 @@ const LoginModal = () => {
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
       <p>First time using Twitter?
-        <span 
-          onClick={onToggle} 
+        <span
+          onClick={onToggle}
           className="
-            text-white 
-            cursor-pointer 
+            text-white
+            cursor-pointer
             hover:underline
           "
           > Create an account</span>
