@@ -4,6 +4,7 @@ import {usePost} from "@/hooks";
 import {ClipLoader} from "react-spinners";
 import {Form, Header} from "@/components";
 import PostItem from "@/components/posts/PostItem";
+import CommentFeed from "@/components/posts/CommentFeed";
 
 const PostView: React.FC = () => {
     const router = useRouter();
@@ -21,6 +22,7 @@ const PostView: React.FC = () => {
               isComment
               placeholder={'Tweet your reply'}
         />
+        <CommentFeed comments={fetchedPost?.comments}/>
     </div>;
 }
 export default PostView;
