@@ -35,7 +35,7 @@ const Form: React.FC<FormProps> = ({placeholder, postId, isComment}) => {
         <div className={'border-b-[1px] border-neutral-800 px-5 py-2'}>
             {currentUser ? (
                 <div className={`flex flex-row gap-4`}>
-                <div>
+                <div className={`mt-2`}>
                     <Avatar userId={currentUser?.id}/>
                 </div>
                     <div className={`w-full`}>

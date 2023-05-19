@@ -18,7 +18,7 @@ const Avatar: React.FC<AvatarProps> = ({userId, isLarge, hasBorder}) => {
         router.push(url);
     }, [router,userId]);
     return (
-        <div className={`${hasBorder ? 'border-4 border-black' : ''} ${isLarge ? 'h-32 w-32' : 'h-12 w-12'} rounded-full hover:opacity-90 transition cursor-pointer relative
+        <div className={`z-1 ${hasBorder ? 'border-4 border-black' : ''} ${isLarge ? 'h-32 w-32' : 'h-12 w-12'} rounded-full hover:opacity-90 transition cursor-pointer relative
         `}>
             <Image fill style={{objectFit:'cover' , borderRadius:'100%'}} onClick={onClick} src={fetchedUser?.profileImage||`/images/placeholder.png`} alt={'avatar'}/>
         </div>
