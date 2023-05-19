@@ -7,3 +7,4 @@ export {default as useUsers} from './useUsers';
 export {default as usePosts} from './usePosts';
 export {default as useFollow} from './useFollow';
 export {default as usePost} from './usePost';
+export {default as useLike} from './useLike';
